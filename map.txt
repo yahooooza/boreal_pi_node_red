@@ -1,0 +1,20 @@
+<script>
+var val = "";
+(function(scope) {
+    // watch msg object from Node-RED
+    scope.$watch('msg', function(msg) {
+        // new message received
+        val  = msg.payload;
+        val2 = "http://"+val+":1880/worldmap";
+        document.getElementById('map').src = val2;
+    });
+})(scope);
+  
+
+
+
+  
+</script>
+
+<!--<button onclick="redirect()" style="color: blue;">Open In the Map</button>-->
+ <iframe id="map" src="" width="500" height="500"></iframe> 
